@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://smartkatalog.cloudwerks.de:8083/api/info", {
+        credentials: "include"
+      })
+        .then((res) => res.text())
+        .then((data) => {
+          document.body.innerText = data;
+        })
+        .catch((err) => {
+          document.body.innerText = "Request failed: " + err;
+        });
+    </script>
+  </body>
+</html>
